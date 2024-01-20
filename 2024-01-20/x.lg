@@ -1,0 +1,10 @@
+make "l 16
+TO offset :v
+  output :l*:v
+END 
+TO sq :x :y
+  pu setx offset :x sety offset :y pd repeat 4 [fd :l rt 90]
+END
+cs ht
+sq 0 0
+sq 0 1
