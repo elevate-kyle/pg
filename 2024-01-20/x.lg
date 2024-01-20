@@ -5,6 +5,12 @@ END
 TO sq :x :y
   pu setx offset :x sety offset :y pd repeat 4 [fd :l rt 90]
 END
-cs ht
-sq 0 0
-sq 0 1
+to ITetra :x :y
+  for [ i 0 3 ] [ sq :x :y+:i ]
+end
+to OTetra
+  for [ i 0 1 ] [ for [ j 0 1 ] [ sq :j :i ] ]
+end
+to LTetra
+  for [ i 0 2 ] [ sq 0 :i ] sq 1 0
+end
