@@ -17,4 +17,9 @@ end
 to JTetra :x :y
   for [ i 0 2 ] [ sq :x :y + :i ] sq :x - 1 :y
 end
-cs
+to TTetra :x :y
+  sq :x - 1 :y
+  sq :x + 1 :y
+  sq :x     :y
+  sq :x :y + 1 
+end
