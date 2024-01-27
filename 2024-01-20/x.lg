@@ -8,9 +8,13 @@ END
 to ITetra :x :y
   for [ i 0 3 ] [ sq :x :y+:i ]
 end
-to OTetra
-  for [ i 0 1 ] [ for [ j 0 1 ] [ sq :j :i ] ]
+to OTetra :x :y
+  for [ i 0 1 ] [ for [ j 0 1 ] [ sq :x + :j :y + :i ] ]
 end
-to LTetra
-  for [ i 0 2 ] [ sq 0 :i ] sq 1 0
+to LTetra :x :y
+  for [ i 0 2 ] [ sq :x :y + :i ] sq :x + 1 :y
 end
+to JTetra :x :y
+  for [ i 0 2 ] [ sq :x :y + :i ] sq :x - 1 :y
+end
+cs
