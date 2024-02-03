@@ -1,11 +1,15 @@
 var canvas = document.querySelector("#canvas");
 var ctx = canvas.getContext("2d");
-var ox = 100;
-var oy = 100;
+var ox = 0;
+var oy = 0;
+var pox = ox+50;
+var poy = oy+60;
 ctx.beginPath();
+//frame
 ctx.rect(ox, oy, 100, 200);
-ctx.rect(ox+50, oy+50, 10, 10);
-ctx.rect(ox+60, oy+50, 10 , 10);
-ctx.rect(ox+70, oy+50, 10, 10);
-ctx.rect(ox+60, oy+60, 10, 10);
+//tmino
+ctx.rect(pox, poy, 10, 10);
+ctx.rect(pox+10, poy, 10, 10);
+ctx.rect(pox+20, poy, 10, 10);
+ctx.rect(pox+10, poy+10, 10, 10);
 ctx.stroke();
