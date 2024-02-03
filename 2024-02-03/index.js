@@ -4,7 +4,6 @@ var ox = 0;
 var oy = 0;
 var pox = ox+50;
 var poy = oy+60;
-
 function frame(){
     ctx.beginPath();
     ctx.rect(ox, oy, 100, 200);
@@ -19,5 +18,17 @@ function tmino(pox, poy){
     ctx.rect(pox+10, poy+10, 10, 10);
     ctx.stroke();
 }
-frame(10, 10)
-tmino(10, 10)
+function draw(ts){
+    frame();
+    tmino(ts%100, ts%200);
+}
+function run(ts){
+    draw(ts);
+    requestAnimationFrame(tick);
+}
+function tick(ts){
+    draw(ts);
+    requestAnimationFrame(tick);
+}
+
+requestAnimationFrame(run);
